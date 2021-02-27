@@ -3,7 +3,7 @@ https = require("ssl.https")
 http = require("socket.http")
 JSON = dofile("./File_Libs/JSON.lua")
 local database = dofile("./File_Libs/redis.lua").connect("127.0.0.1", 6379)
-Server_X-brooks = io.popen("echo $SSH_CLIENT | awk '{ print $1}'"):read('*a')
+Server_Xbrooks = io.popen("echo $SSH_CLIENT | awk '{ print $1}'"):read('*a')
 local AutoFiles_Xbrooks = function() 
 local Create_Info = function(Token,Sudo,UserName)  
 local Xbrooks_Info_Sudo = io.open("sudo.lua", 'w')
@@ -90,19 +90,19 @@ done
 ]])
 RunTs:close()
 end
-Files_X-brooks_Info()
-database:del(Server_X-brooks.."Token_X-brooks");database:del(Server_X-brooks.."Id_X-brooks");database:del(Server_X-brooks.."UserName_X-brooks")
+Files_Xbrooks_Info()
+database:del(Server_Xbrooks.."Token_Xbrooks");database:del(Server_Xbrooks.."Id_Xbrooks");database:del(Server_Xbrooks.."UserName_Xbrooks")
 sudos = dofile('sudo.lua')
 os.execute('./install.sh ins')
 end 
 local function Load_File()  
 local f = io.open("./sudo.lua", "r")  
 if not f then   
-AutoFiles_X-brooks()  
+AutoFiles_Xbrooks()  
 var = true
 else   
 f:close()  
-database:del(Server_X-brooks.."Token_X-brooks");database:del(Server_X-brooks.."Id_X-brooks");database:del(Server_X-brooks.."UserName_X-brooks")
+database:del(Server_Xbrooks.."Token_Xbrooks");database:del(Server_Xbrooks.."Id_Xbrooks");database:del(Server_Xbrooks.."UserName_Xbrooks")
 sudos = dofile('sudo.lua')
 os.execute('./install.sh ins')
 var = false
