@@ -8117,7 +8117,7 @@ Text = [[
      
 [⌔︙ ToolS 𝘉𝘙𝘰𝘰𝘒𝘴 .](https://t.me/vBrOokS)
      
-[⌔︙ 𝖳WSL Source 𝘉𝘙𝘰𝘰𝘒𝘴 .](http://t.me/BB88B)
+[⌔︙ 𝖳WSL Source 𝘉𝘙𝘰𝘰𝘒𝘴 .](http://t.me/tbrookss_bot)
      
 ]]
 send(msg.chat_id_, msg.id_,Text)
