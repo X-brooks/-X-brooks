@@ -1,16 +1,16 @@
 #!/usr/bin/env bash
-cd $HOME/X-brooks
+cd $HOME/brooksto
 install() {
 rm -rf $HOME/.telegram-cli
 sudo chmod +x tg
-chmod +x X-brooks
+chmod +x brooksto
 chmod +x ts
 ./ts
 }
 get() {
-rm -fr 
+rm -fr brooksto.lua
 rm -fr sudo.lua
-wget "https://raw.githubusercontent.com/X-brooks/X-brooks/main/X-brooks.lua"
+wget "https://raw.githubusercontent.com/brooksto/brooksto/main/brooksto.lua"
 lua start.lua
 }
 installall(){
@@ -47,7 +47,7 @@ fi
 installall
 cd ..
 rm -rf luarocks*
-cd X-brooks
+cd brooksto
 rm -rf luarocks*
 lua start.lua
 

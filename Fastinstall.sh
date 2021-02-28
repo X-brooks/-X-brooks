@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
-cd $HOME/X-brooks
+cd $HOME/brooksto
 rm -rf $HOME/.telegram-cli
 install() {
 rm -rf $HOME/.telegram-cli
 sudo chmod +x tg
-chmod +x X-brooks
+chmod +x brooksto
 chmod +x ts
 ./ts
 }
