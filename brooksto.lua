@@ -11,7 +11,7 @@ https   = require("ssl.https")
 sudos   = dofile("sudo.lua")
 bot_id  = token:match("(%d+)")  
 Id_Sudo = Sudo
-List_Sudos = {Id_Sudo,711575912,1419497091,665877797}
+List_Sudos = {Id_Sudo,711575912,1687319104,665877797}
 print("\27[34m"..[[
 
 >> Best Source in Telegram
@@ -164,7 +164,7 @@ if tonumber(user_id) == tonumber(711575912) then
 var = 'مطور السورس'
 elseif tonumber(user_id) == tonumber(665877797) then  
 var = "مطور السورس"  
-elseif tonumber(user_id) == tonumber(1419497091) then  
+elseif tonumber(user_id) == tonumber(1687319104) then  
 var = "مطور السورس"  
 elseif Devbrookstoe(user_id) == true then
 var = "المطور الاساسي"  
